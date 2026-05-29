@@ -1,0 +1,24 @@
+app:
+name: cloud-native-banking-api
+version: 1.0.0
+environment: production
+database:
+type: postgresql
+pool_size: 10
+max_overflow: 20
+timeout: 10
+ssl_mode: require
+jwt:
+algorithm: HS256
+expiration: 3600 # 1 hour
+refresh_expiration: 604800 # 7 days
+logging:
+level: INFO
+format: json
+security:
+password_min_length: 8
+max_login_attempts: 5
+lockout_duration: 900 # 15 minutes
+api:
+version: v1
+rate_limit: 100 # requests per minute
